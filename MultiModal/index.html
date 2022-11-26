@@ -91,8 +91,19 @@ In CVPR 2021 <span class="award">(Oral)</span>
 <h2 id="abstract">Abstract</h2>
 
 <p class="text-justify">
-Exploiting internal statistics of a single natural image has long been recognized as a significant research paradigm where the goal is to learn the internal distribution of patches within the image without relying on external training data. Different from prior works that model such a distribution implicitly with a top-down latent variable model (<em>e.g.</em>, generator), this paper proposes to <em>explicitly</em> represent the statistical distribution within a single natural image by using an energy-based generative framework, where a pyramid of energy functions, each parameterized by a bottom-up deep neural network, are used to capture the distributions of patches at different resolutions. Meanwhile, a coarse-to-fine sequential training and sampling strategy is presented to train the model efficiently. Besides learning to generate random samples from white noise, the model can learn in parallel with a self-supervised task (<em>e.g.</em>, recover the input image from its corrupted version), which can further improve the descriptive power of the learned model. The proposed model is simple and natural in that it does not require an auxiliary model (<em>e.g.</em>, discriminator) to assist the training. Besides, it also unifies internal statistics learning and image generation in a single framework. Experimental results presented on various image generation and manipulation tasks, including super-resolution, image editing, harmonization, style transfer, <em>etc.</em>, have demonstrated the effectiveness of our model for internal learning.
-</p>
+Deep Convolutional Neural Networks (DCNN) have proven to be an exceptional tool for object recognition,
+generative modelling, and multi-modal learning in various computer vision applications. However, recent
+findings have shown that such state-of-the-art models can be easily deceived by inserting slight
+imperceptible perturbations to key pixels in the input. A good target detection systems can accurately identify targets by localizing their coordinates on the input image of interest. This is ideally achieved by labeling each pixel in an image as a background or a potential target pixel. However, prior research still confirms that such state of the art targets models are susceptible to adversarial attacks. In the case of generative models, facial sketches drawn by artists mostly used by law enforcement agencies depend on the ability of the artist to clearly replicate all the key facial features that aid in capturing the true identity of a subject. Recent works have attempted to synthesize these sketches into plausible visual images to improve visual recognition and identification. However, synthesizing photo-realistic images from sketches proves to be an even more challenging task, especially for sensitive applications such as suspect identification. However, the incorporation of hybrid discriminators, which perform attribute classification
+of multiple target attributes, a quality guided encoder that minimizes the perceptual dissimilarity of the
+latent space embedding of the synthesized and real image at different layers in the network have shown to be powerful tools towards better multi modal learning techniques.
+In general, our overall approach was aimed at improving target detection systems and the visual appeal of
+synthesized images while incorporating multiple attribute assignment to the generator without
+compromising the identity of the synthesized image. We synthesized sketches using XDOG filter for the
+CelebA, Multi-modal and CelebA-HQ datasets and from an auxiliary generator trained on sketches
+from CUHK, IIT-D and FERET datasets. Our results overall for different model applications are impressive
+compared to current state of the art.
+            </p>
 
 <div class="section container">
     <div class="row">
