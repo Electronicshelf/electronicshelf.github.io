@@ -124,55 +124,6 @@ Exploiting internal statistics of a single natural image has long been recognize
 <span>Figure 1. Multi-Scale EBM modeling.</span>
 </div>
 
-<p>Let \(\{\mathbf{I}(s), s = 0, ..., S\}\) denote the multi-scale versions of a training image \(\mathbf{I}\), with \(s\) indexing the scale, the multi-scale EBM (Figure 1) is modeled as</p>
-
-\[p_\theta(\mathbf{I}^{(s)}) = \frac{1}{Z(\theta_s)} \exp(f_\theta(\mathbf{I}^{(s)})),\]
-
-<p>where \(f_\theta\) is an energy network, \(Z(\theta)=\int \exp (f_\theta(\mathbf{I})) d \mathbf{I}\) is a normalization constant.</p>
-
-<h3 id="multi-scale-sequential-sampling">Multi-Scale Sequential Sampling</h3>
-
-<div class="figure">
-<img src="/projects/patchgencn/images/ms_sample.png" alt="ms sample" width="70%" />
-<span>Figure 2. Multi-Scale sequential sampling process.</span>
-</div>
-
-<p>The mutli-scale sequential sampling (Figure 2) can be represented as: for \(s=0,...,S\),</p>
-
-\[\tilde{\mathbf{I}}^{(s)}_0=
-\begin{cases}
-Z \sim \mathcal{U}_{d}((-1, 1)^{d}) &amp; s=0\\
-\text{Upsample}(\tilde{\mathbf{I}}^{(s-1)}_{K^{(s-1)}})&amp; s &gt; 0
-\end{cases}\]
-
-\[\tilde{\mathbf{I}}^{(s)}_{t+1}= \tilde{\mathbf{I}}^{(s)}_{t} + \frac{\delta^2}{2} \frac{\partial}{\partial \mathbf{I}^{(s)}} f_{\theta_{s}} (\tilde{\mathbf{I}}^{(s)}_{t}) + \delta\epsilon^{(s)}_{t},\]
-
-<p>where \(t=0,...,K^{(s)} - 1\) indexes the timestep, \(\mathcal{U}_{d}((-1, 1)^{d})\) the uniform distribution, \(\delta\) the Langvein step size, \(\epsilon_t \sim \mathcal{N}(0, I)\) a Gaussian noise.</p>
-
-<h2 id="related-work">Related Work</h2>
-<ol>
-</ol>
-
-<p><br /></p>
-
-<h2 id="acknowledgement">Acknowledgement</h2>
-<p>We thank Yang Zhao for helpful discussions, and Yifan Zhang for creating initial image manipulation inputs.</p>
-
-            <!-- Hidden bibtex block -->
-            
-            <div class="bibtex hidden">
-              @inproceedings{zheng2021patchgencn,
-    title={Patchwise Generative ConvNet: Training Energy-Based Models from a Single Natural Image for Internal Learning},
-    author={Zheng, Zilong and Xie, Jianwen and Li, Ping},
-    booktitle={Proceedings of the IEEE conference on computer vision and pattern recognition (CVPR)},
-    year={2021}
-}
-
-            </div>
-            
-        </div>
-
-    </div>
   
     <div class="modal fade" id="bibtex-modal" tabindex="-1" role="dialog" aria-labelledby="bibtex-modal" aria-hidden="true">
       <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
